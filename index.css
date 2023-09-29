@@ -1,0 +1,127 @@
+/* FONT */
+#header-text {
+    font-family: 'Inter';
+    color: white;
+}
+
+#header-text h1 {
+    font-weight: 800;
+    font-size: 43px;
+}
+
+
+#header-text p {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.search-container input {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.search-container button {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 14px;
+    color: #374151;
+}
+
+#start-exploring-message i {
+    font-size: 4em;
+    color: #DFDDDD;
+}
+
+#start-exploring-message p {
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 700;
+    color: #DFDDDD;
+}
+
+/* LAYOUT */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header, main {
+    width: 35em;
+}
+
+header {
+    height: 13em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-image: url('img/movie-posters-wall.png');
+    background-size: cover;
+    background-position: 25% 25%;
+    background-color: rgba(0, 0, 0, 0.75);
+    background-blend-mode: multiply;
+    position: relative;
+}
+
+#header-text {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 3em;
+}
+
+.search-container i {
+    position: absolute;
+    left: 90px;
+    color: #6B7280;
+}
+
+.search-container input {
+    width: 22em;
+    height: 2.5em;
+    padding-left: 3em;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    border: 1px solid #D1D5DB;
+}
+
+.search-container button {
+    width: 7.5em;
+    height: 2.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border: 1px solid #D1D5DB;
+    cursor: pointer;
+}
+
+#start-exploring-message {
+    height: 35.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#start-exploring-message p {
+
+}
