@@ -10,7 +10,7 @@
         <header>
             <div id="header-text">
                 <h1>Find your film</h1>
-                <p>My Watchlist</p>
+                <a class="see-watchlist" href="watchlist.html"><p>My Watchlist</p></a>
             </div>
             <div class="search-container">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -18,14 +18,19 @@
                 <button id="search-btn">Search</button>
             </div>
         </header>
-        <main>
+        <main id="main-container">
+
+            <div id="movies-container">
+
+            </div>
             
             <div id="start-exploring-message">
                 <i class="fa-solid fa-film"></i>
                 <p>Start exploring</p>
             </div>
+            
             <div id="error-search-message">
-
+                <p>Unable to find what you’re looking for. Please try another search.</p>
             </div>
         </main>
         <script src="index.js"></script>
