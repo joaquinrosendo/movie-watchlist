@@ -15,6 +15,11 @@
     font-size: 14px;
 }
 
+.see-watchlist, .see-search-page {
+    color: white;
+    text-decoration: none;
+}
+
 .search-container input {
     font-family: 'Inter';
     font-weight: 500;
@@ -34,7 +39,16 @@
     color: #DFDDDD;
 }
 
-#start-exploring-message p, #error-search-message p {
+#add-movies-message {
+    color: black;
+    text-decoration: none;
+}
+
+#add-movies-message p {
+    font-weight: 700;
+}
+
+#start-exploring-message p, #error-search-message p, #empty-watchlist-message {
     font-family: 'Inter';
     font-size: 18px;
     font-weight: 700;
@@ -112,6 +126,10 @@ header {
     align-items: center;
 }
 
+.header-text-watchlist {
+    margin-bottom: 3em;
+}
+
 .search-container {
     display: flex;
     flex-wrap: nowrap;
@@ -145,27 +163,6 @@ header {
     cursor: pointer;
 }
 
-#start-exploring-message {
-    height: 35.5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#start-exploring-message p {
-
-}
-
-#error-search-message {
-    display: none;
-    height: 35.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
 main {
     width: 29.5em;
     padding-top: 4em;
@@ -173,6 +170,38 @@ main {
     padding-right: 2.75em;
     height: 35.5em;
     overflow: auto;
+}
+
+#start-exploring-message, #empty-watchlist-message {
+    height: 35.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#empty-watchlist-message {
+    height: 31.5em;
+}
+
+#add-movies-message {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-movies-message i {
+    margin-right: 1em;
+}
+
+#error-search-message {
+    display: none;
+    height: 35.5em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #movies-container {
@@ -221,6 +250,7 @@ main {
 
 .see-watchlist {
     cursor: pointer;
+    text-decoration: none;
 }
 
 .movie-specs {

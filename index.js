@@ -5,6 +5,7 @@ const startExploringMessage = document.getElementById('start-exploring-message')
 const errorMessage = document.getElementById('error-search-message');
 const moviesContainer = document.getElementById('movies-container');
 
+
 let displayMovies = (movies) => {
 
     let promises = [];
@@ -15,7 +16,7 @@ let displayMovies = (movies) => {
             .then(res => res.json())
             .then(data => { 
                 return `<div class="movie-container" id="movie-container">
-                                        <img class="movie-poster" src="${data.Poster}"/>
+                                        <img class="movie-poster" id="movie-poster" src="${data.Poster}"/>
                                         <div class="movie-info">
                                             <div class="movie-header">
                                                 <h3 id="movie-title">${data.Title}</h3>
@@ -25,8 +26,8 @@ let displayMovies = (movies) => {
                                             <div class="movie-specs">
                                                 <p id="movie-runtime">${data.Runtime}</p>
                                                 <p id="movie-genre">${data.Genre}</p>
-                                                <a class="add-to-watchlist"><i class="fa-solid fa-circle-plus"></i>
-                                                <p id="add-watchlist">Watchlist</p></a>
+                                                <div class="add-to-watchlist click-to-add"><i class="fa-solid fa-circle-plus click-to-add"></i>
+                                                <p class="add-watchlist click-to-add" id="add-watchlist">Watchlist</p></div>
                                             </div>
                                             <p id="movie-plot-paragraph">${data.Plot}</p>
                                         </div>
@@ -70,4 +71,31 @@ let searchMovie = () => {
     })
 }
 
+
+
 searchBtn.addEventListener('click', searchMovie);
+
+searchInput.addEventListener('keydown', event => {
+    if(event.key === 'Enter'){
+        searchMovie();
+    }
+})
+
+moviesContainer.addEventListener('click', event => {
+    const target = event.target;
+
+    if (target.classList.contains('click-to-add')){
+        const movieElement = target.closest(".movie-container");
+        const movieTitle = movieElement.querySelector('#movie-title').textContent;
+        const movieRating = movieElement.querySelector('#movie-rating').textContent;
+        const movieRuntime = movieElement.querySelector('#movie-runtime').textContent;
+        const movieGenre = movieElement.querySelector('#movie-genre').textContent;
+        const moviePlot = movieElement.querySelector('#movie-plot-paragraph').textContent;
+        const moviePosterUrl = movieElement.querySelector('#movie-poster').src;
+
+        console.log(moviePosterUrl)
+
+        localStorage.setItem(movieTitle, JSON.stringify({title: movieTitle, rating: movieRating, runtime: movieRuntime, genre: movieGenre, plot: moviePlot, poster: moviePosterUrl}));
+    }
+})
+

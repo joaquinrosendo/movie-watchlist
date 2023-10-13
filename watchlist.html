@@ -8,26 +8,26 @@
     </head>
     <body>
         <header>
-            <div id="header-text">
+            <div id="header-text" class="header-text-watchlist">
                 <h1>My Watchlist</h1>
-                <a><p>Search for Movies</p></a>
+                <a class="see-search-page" href="index.html"><p>Search for Movies</p></a>
             </div>
         </header>
         <main id="main-container">
 
-            <div id="movies-container">
+            <div id="watchlist-movies-container">
                 
             </div>
             
             <div id="empty-watchlist-message">
-                <i class="fa-solid fa-film"></i>
-                <p>Start exploring</p>
+                <p>Your watchlist is looking a little empty...</p>
+                <a id="add-movies-message" href="index.html">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <p>Let's add some movies!</p>
+                </a>
             </div>
             
-            <div id="error-search-message">
-                <p>Unable to find what you’re looking for. Please try another search.</p>
-            </div>
         </main>
-        <script src="index.js"></script>
+        <script src="watchlist.js"></script>
     </body>
 </html>
