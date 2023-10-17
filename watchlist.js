@@ -1,5 +1,6 @@
 const watchlistMoviesContainer = document.getElementById('watchlist-movies-container');
 const emptyWatchlistMessage = document.getElementById('empty-watchlist-message');
+const moviesContainer = document.getElementById('watchlist-movies-container');
 
 let displayWatchlist = () => {
 
@@ -33,8 +34,8 @@ let displayWatchlist = () => {
                         <div class="movie-specs">
                             <p id="movie-runtime">${movie.value.runtime}</p>
                             <p id="movie-genre">${movie.value.genre}</p>
-                            <div class="add-to-watchlist click-to-add"><i class="fa-solid fa-circle-plus click-to-add"></i>
-                            <p class="add-watchlist click-to-add" id="add-watchlist">Watchlist</p></div>
+                            <div class="remove-from-watchlist click-to-remove"><i class="fa-solid fa-circle-minus click-to-remove"></i>
+                            <p class="remove-watchlist click-to-remove" id="remove-watchlist">Watchlist</p></div>
                         </div>
                         <p id="movie-plot-paragraph">${movie.value.plot}</p>
                     </div>
@@ -46,3 +47,22 @@ let displayWatchlist = () => {
 }
 
 displayWatchlist();
+
+moviesContainer.addEventListener('click', event => {
+    const target = event.target;
+
+    console.log(target);
+    if (target.classList.contains('click-to-remove')){
+        const movieElement = target.closest(".movie-container");
+        const movieTitle = movieElement.querySelector('#movie-title').textContent;
+
+        console.log(movieTitle);
+
+        localStorage.removeItem(movieTitle);
+        
+    }
+
+    displayWatchlist();
+})
+
+

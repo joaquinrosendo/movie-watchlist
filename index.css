@@ -260,7 +260,7 @@ main {
     align-items: center;
 }
 
-.add-to-watchlist {
+.add-to-watchlist, .remove-from-watchlist {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
